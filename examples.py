@@ -36,35 +36,35 @@ def main():
     # Example 1: Basic usage with 3 Gaussians
     run_example(
         "Fit 3 Gaussians with automatic initial guess",
-        ["python", "uvvis_gaussian_fit.py", "DEM_848_spectrum.csv", "3"]
+        ["python", "uvvis_gaussian_fit.py", "spectrum.csv", "3"]
     )
     
     # Example 2: Specify initial peak positions
     run_example(
         "Fit 2 Gaussians with specified initial peak positions",
-        ["python", "uvvis_gaussian_fit.py", "DEM_848_spectrum.csv", "2", 
+        ["python", "uvvis_gaussian_fit.py", "spectrum.csv", "2", 
          "--initial_peaks", "25000", "15000"]
     )
     
     # Example 3: Restrict wavelength range
     run_example(
         "Fit 3 Gaussians in limited wavelength range (300-700 nm)",
-        ["python", "uvvis_gaussian_fit.py", "DEM_848_spectrum.csv", "3",
+        ["python", "uvvis_gaussian_fit.py", "spectrum.csv", "3",
          "--range_nm", "300", "700"]
     )
     
     # Example 4: Display in wavenumber units
     run_example(
         "Fit 2 Gaussians and display results in wavenumber units",
-        ["python", "uvvis_gaussian_fit.py", "DEM_848_spectrum.csv", "2",
+        ["python", "uvvis_gaussian_fit.py", "spectrum.csv", "2",
          "--display_unit", "cm"]
     )
     
     # Example 5: Save plot to file
     run_example(
         "Fit 3 Gaussians and save plot to file",
-        ["python", "uvvis_gaussian_fit.py", "DEM_848_spectrum.csv", "3",
-         "--save", "dem_848_fit.png"]
+        ["python", "uvvis_gaussian_fit.py", "spectrum.csv", "3",
+         "--save", "spectrum_fit.png"]
     )
 
 if __name__ == "__main__":

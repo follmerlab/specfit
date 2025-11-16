@@ -10,8 +10,8 @@ Usage:
     python uvvis_gaussian_fit.py <csv_file> <n_gaussians> [options]
 
 Example:
-    python uvvis_gaussian_fit.py DEM_848_spectrum.csv 3 --initial_peaks 25000 20000 15000
-    python uvvis_gaussian_fit.py DEM_848_spectrum.csv 2 --range_nm 300 700
+    python uvvis_gaussian_fit.py spectrum.csv 3 --initial_peaks 25000 20000 15000
+    python uvvis_gaussian_fit.py spectrum.csv 2 --range_nm 300 700
 """
 
 import numpy as np

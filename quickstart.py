@@ -16,7 +16,7 @@ def get_user_input():
     while True:
         csv_file = input("\nEnter CSV filename (or 'demo' for example): ").strip()
         if csv_file.lower() == 'demo':
-            csv_file = 'DEM_848_spectrum.csv'
+            csv_file = 'spectrum.csv'
             break
         elif os.path.exists(csv_file):
             break

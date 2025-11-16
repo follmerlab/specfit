@@ -64,47 +64,47 @@ python uvvis_gaussian_fit.py <csv_file> <n_gaussians> [options]
 
 ### 1. Basic Usage - Automatic Peak Distribution
 ```bash
-python uvvis_gaussian_fit.py DEM_848_spectrum.csv 3
+python uvvis_gaussian_fit.py spectrum.csv 3
 ```
 Fits 3 Gaussians with automatically distributed initial peak positions.
 
 ### 2. Specify Initial Peak Positions (Wavelength)
 ```bash
-python uvvis_gaussian_fit.py DEM_848_spectrum.csv 2 --initial_peaks 400 500
+python uvvis_gaussian_fit.py spectrum.csv 2 --initial_peaks 400 500
 ```
 Fits 2 Gaussians with initial centers at 400 and 500 nm.
 
 ### 2b. Specify Initial Peak Positions (Wavenumber)
 ```bash
-python uvvis_gaussian_fit.py DEM_848_spectrum.csv 2 --initial_peaks_cm 25000 20000
+python uvvis_gaussian_fit.py spectrum.csv 2 --initial_peaks_cm 25000 20000
 ```
 Fits 2 Gaussians with initial centers at 25,000 and 20,000 cm⁻¹.
 
 ### 3. Analyze Specific Wavelength Range
 ```bash
-python uvvis_gaussian_fit.py DEM_848_spectrum.csv 3 --range_nm 300 700
+python uvvis_gaussian_fit.py spectrum.csv 3 --range_nm 300 700
 ```
 Only analyzes data between 300-700 nm, fitting 3 Gaussians.
 
 ### 4. Display in Wavenumber Units
 ```bash
-python uvvis_gaussian_fit.py DEM_848_spectrum.csv 2 --display_unit cm
+python uvvis_gaussian_fit.py spectrum.csv 2 --display_unit cm
 ```
 Shows the final plot with wavenumber (cm⁻¹) on the x-axis.
 
 ### 5. Save High-Resolution Plot
 ```bash
-python uvvis_gaussian_fit.py DEM_848_spectrum.csv 3 --save my_spectrum_fit.png
+python uvvis_gaussian_fit.py spectrum.csv 3 --save my_spectrum_fit.png
 ```
 Saves the result plot as a high-resolution PNG file.
 
 ### 6. Complete Example
 ```bash
-python uvvis_gaussian_fit.py DEM_848_spectrum.csv 3 \
+python uvvis_gaussian_fit.py spectrum.csv 3 \
   --initial_peaks 360 450 625 \
   --range_nm 350 650 \
   --display_unit nm \
-  --save dem_848_analysis.pdf
+  --save spectrum_analysis.pdf
 ```
 
 ## Output Information
@@ -157,23 +157,23 @@ For each fitted Gaussian:
    ```bash
    # Quick visual inspection
    python -c "import pandas as pd; import matplotlib.pyplot as plt; 
-   data=pd.read_csv('DEM_848_spectrum.csv', header=None); 
+   data=pd.read_csv('spectrum.csv', header=None); 
    plt.plot(data[0], data[1]); plt.show()"
    ```
 
 2. **Start with basic fit**:
    ```bash
-   python uvvis_gaussian_fit.py DEM_848_spectrum.csv 2
+   python uvvis_gaussian_fit.py spectrum.csv 2
    ```
 
 3. **Refine based on results**:
    ```bash
-   python uvvis_gaussian_fit.py DEM_848_spectrum.csv 3 --initial_peaks 25000 20000 15000
+   python uvvis_gaussian_fit.py spectrum.csv 3 --initial_peaks 25000 20000 15000
    ```
 
 4. **Final analysis with range restriction**:
    ```bash
-   python uvvis_gaussian_fit.py DEM_848_spectrum.csv 3 \
+   python uvvis_gaussian_fit.py spectrum.csv 3 \
      --initial_peaks 25000 20000 15000 \
      --range_nm 400 800 \
      --save final_analysis.png
@@ -209,7 +209,7 @@ uvvis_convertfit/
 ├── requirements.txt         # Python dependencies
 ├── examples.py             # Usage examples
 ├── README.md              # This documentation
-└── DEM_848_spectrum.csv   # Example data file
+└── spectrum.csv            # Example data file
 ```
 
 ## Support and Contributing
